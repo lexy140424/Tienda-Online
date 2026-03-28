@@ -8,14 +8,11 @@
 
 <body>
 
-
 <header>
 
-    <!-- Agregar el logo de la tienda -->
-    <!-- Imagen del logo -->
-    <!-- agregar imagen, ej: <img src="img/logo.png" alt="Logo de tienda"> -->
     <div>
-        <h1>Mi Tienda</h1>
+        <img src="allka logo.jpg">
+        <h1>Allka</h1>
     </div>
 
     <nav>
@@ -27,80 +24,77 @@
         </ul>
     </nav>
 
-    <!-- Icono o imagen de carrito -->
     <div>
-        <a href="carrito.html">Carrito</a>
+        <a href="carrito.html">
+            <img src="carrito.jpg" id="carrito">
+        </a>
     </div>
 
 </header>
 
-
-<!-- CONTENIDO PRINCIPAL -->
 <main>
 
-    <!--  Imagen principal-->
-    <!--  imagen grande  -->
-    <!-- Ejemplo para img promoción: <img src="img/promo.jpg" alt="Promoción principal"> -->
     <section>
-        <h2>Bienvenidos a nuestra tienda</h2>
-        <p>Descubrí nuestros productos destacados</p>
+        <p>Ultimas novedades</p>
+        <div class="novedad">
+        <img src="remera 1.jpg">
+        <img src="pantalon 1.jpg">
+        <img src="remera 2.jpg">
+        </div>
     </section>
 
-
-    <!-- CATEGORÍAS -->
     <section>
-        <h2>Categorías</h2>
+        <div class="novedad">
+        <h2>Destacados</h2>
 
         <article>
-            <!-- IMAGEN DE CATEGORÍA -->
-            <!-- Ejemplo: <img src="img/ropa.jpg" alt="Categoría Ropa"> -->
-            <h3>Ropa</h3>
-        </article>
-
-        <article>
-            <!-- IMAGEN DE CATEGORÍA -->
-            <h3>Accesorios</h3>
-        </article>
-
-        <article>
-            <!-- IMAGEN DE CATEGORÍA -->
-            <h3>Ofertas</h3>
-        </article>
-    </section>
-
-
-    <!-- PRODUCTOS DESTACADOS -->
-    <section>
-        <h2>Productos</h2>
-
-        <article>
-            <!-- IMAGEN DEL PRODUCTO -->
-            <!-- Ejemplo: <img src="img/producto1.jpg" alt="Producto 1"> -->
             <h3>Producto 1</h3>
-            <p>Descripción del producto</p>
+            <img src="remera 3.jpg">
+                <div>
+                    <p>Remera - $20.000</p>
+                    <button onclick="agregar('Remera', 20000, 'remera 3.jpg')">Agregar</button>
+                </div>
         </article>
 
         <article>
-            <!-- IMAGEN DEL PRODUCTO -->
             <h3>Producto 2</h3>
-            <p>Descripción del producto</p>
+            <img src="pantalon 2.jpg">
+                <div>
+                    <p>pantalon - $30.000</p>
+                    <button onclick="agregar('Pantalón', 30000, 'pantalon 2.jpg')">Agregar</button>
+                </div>
         </article>
 
         <article>
-            <!-- IMAGEN DEL PRODUCTO -->
             <h3>Producto 3</h3>
-            <p>Descripción del producto</p>
+            <img src="remera 4.jpg">
+                <div>
+                    <p>Remera - $15.000</p>
+                    <button onclick="agregar('Remera', 15000, 'remera 4.jpg')">Agregar</button>
+                </div>    
         </article>
-
+    </div>
     </section>
 
 </main>
+    
+<script>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+function agregar(nombre, precio, imagen) {
+  let producto = {
+    nombre: nombre,
+    precio: precio,
+    imagen: imagen
+  };
 
+  carrito.push(producto);
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+</script>
 <footer>
 
-    <!-- Logo de redes. -->
-    <!-- Ejemplo: iconos de Instagram, Facebook, etc. -->
 
     <p>© 2026 Mi Tienda</p>
 
