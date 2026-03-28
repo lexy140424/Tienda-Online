@@ -4,3 +4,13 @@
   width: 90%;
   margin: auto;
 }
+
+#carrito {
+  width: 100px;
+  height: 100px;
+}
+
+.novedad img {
+   width: 100px;
+  height: 100px;
+}
