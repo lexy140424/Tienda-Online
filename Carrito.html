@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito</title>
+</head>
+
+<body>
+
+<h1>Tu carrito 🛒</h1>
+
+<p>Total: $<span id="total">0</span></p>
+
+<button onclick="vaciar()">Vaciar carrito</button>
+
+<br><br>
+
+<a href="index.html">Volver a la tienda</a>
+
+<script>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+let contenedor = document.createElement("div");
+
+let total = 0;
+
+function mostrarCarrito() {
+  contenedor.innerHTML = "";
+  total = 0;
+
+  carrito.forEach((producto, index) => {
+    let item = document.createElement("div");
+
+    item.innerHTML = `
+      <img src="${producto.imagen}" width="100">
+      <p>${producto.nombre}</p>
+      <p>$${producto.precio}</p>
+      <button onclick="eliminar(${index})">Eliminar</button>
+      <hr>
+    `;
+
+    contenedor.appendChild(item);
+
+    total += producto.precio;
+  });
+
+  document.getElementById("total").textContent = total;
+}
+
+function eliminar(index) {
+  carrito.splice(index, 1); // elimina 1 producto
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  mostrarCarrito(); // vuelve a mostrar actualizado
+}
+
+function vaciar() {
+  localStorage.removeItem("carrito");
+  carrito = [];
+  mostrarCarrito();
+}
+
+document.body.appendChild(contenedor);
+
+mostrarCarrito();
+</script>
+
+</body>
+</html>
