@@ -2,20 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Tienda Online</title>
-     <link rel="stylesheet" href="estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allka Exclusive Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
 
 <header>
-
-    <div>
-
+    <div id="contenedor-logo">
         <h1>Allka</h1>
+        <p class="subtitulo-marca">Exclusive Club</p>
     </div>
 
-   <nav>
+    <nav>
         <ul id="lista-header">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
@@ -24,87 +24,76 @@
         </ul>
     </nav>
 
-    <div id="carrito">
+    <div id="boton-carrito">
         <a href="carrito.html">
-            <img src="carrito.jpg" id="carrito">
+            <img src="carrito.jpg" id="img-carrito" alt="Carrito">
         </a>
     </div>
-
 </header>
 
 <main>
-
     <section>
-        <h1 class="ultnv">Ultimas novedades</h1>
-        <div class="novedad">
-        <img src="remera 1.jpg">
-        <img src="pantalon 1.jpg">
-        <img src="remera 2.jpg">
+        <h2 class="titulo-seccion">Ultimas novedades</h2>
+        <div class="contenedor-flex">
+            <img src="remera 1.jpg" class="img-novedad">
+            <img src="pantalon 1.jpg" class="img-novedad">
+            <img src="remera 2.jpg" class="img-novedad">
         </div>
     </section>
 
     <section>
-        <div class="novedad">
-        <h1 >Destacados</h1>
-
-        <article>
-            <h2>Producto 1</h2>
-            <img src="remera 3.jpg">
-                <div>
+        <h2 class="titulo-seccion">Destacados</h2>
+        <div class="contenedor-flex">
+            <article class="tarjeta-producto">
+                <img src="remera 3.jpg" alt="Producto 1">
+                <div class="info-producto">
+                    <h2>Producto 1</h2>
                     <p>Remera - $20.000</p>
-                    <button onclick="agregar('Remera', 20000, 'remera 3.jpg')">Agregar</button>
+                    <button class="btn-agregar" onclick="agregar('Remera', 20000, 'remera 3.jpg')">Agregar al carrito</button>
                 </div>
-        </article>
+            </article>
 
-        <article>
-            <h2>Producto 2</h2>
-            <img src="pantalon 2.jpg">
-                <div>
-                    <p>pantalon - $30.000</p>
-                    <button onclick="agregar('Pantalón', 30000, 'pantalon 2.jpg')">Agregar</button>
+            <article class="tarjeta-producto">
+                <img src="pantalon 2.jpg" alt="Producto 2">
+                <div class="info-producto">
+                    <h2>Producto 2</h2>
+                    <p>Pantalón - $30.000</p>
+                    <button class="btn-agregar" onclick="agregar('Pantalón', 30000, 'pantalon 2.jpg')">Agregar al carrito</button>
                 </div>
-        </article>
+            </article>
 
-        <article>
-            <h2>Producto 3</h2>
-            <img src="remera 4.jpg">
-                <div>
+            <article class="tarjeta-producto">
+                <img src="remera 4.jpg" alt="Producto 3">
+                <div class="info-producto">
+                    <h2>Producto 3</h2>
                     <p>Remera - $15.000</p>
-                    <button onclick="agregar('Remera', 15000, 'remera 4.jpg')">Agregar</button>
-                </div>    
-        </article>
-    </div>
+                    <button class="btn-agregar" onclick="agregar('Remera', 15000, 'remera 4.jpg')">Agregar al carrito</button>
+                </div>
+            </article>
+        </div>
     </section>
-
 </main>
-    
-<script>
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-function agregar(nombre, precio, imagen) {
-  let producto = {
-    nombre: nombre,
-    precio: precio,
-    imagen: imagen
-  };
-
-  carrito.push(producto);
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-</script>
 
 <footer>
-    <p id="copyright">© 2026 Mi Tienda</p>
-
+    <p id="copyright">© 2026 Allka Exclusive Club</p>
     <nav id="menu-footer">
         <ul id="lista-enlaces">
-            <li><a href="https://www.instagram.com/allkaexclusiveclub/" target="_blank" id="link-instagram">Instagram</a></li>
+            <li><a href="https://www.instagram.com/allkaexclusiveclub/" target="_blank">Instagram</a></li>
             <li><a href="Términos.html">Términos y condiciones</a></li>
             <li><a href="Privacidad.html">Política de privacidad</a></li>
         </ul>
     </nav>
 </footer>
+
+<script>
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    function agregar(nombre, precio, imagen) {
+        let producto = { nombre, precio, imagen };
+        carrito.push(producto);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        alert("¡Producto agregado!");
+    }
+</script>
 
 </body>
 </html>
