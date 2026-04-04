@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda Online</title>
+     <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<div id="resultado"></div>
+<button onclick="mostrarDatos()">Ver comentarios</button>
+<button onclick="borrarTodo()">Borrar todos</button>
+
+<script>
+function mostrarDatos() {
+    let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+    let contenedor = document.getElementById("resultado");
+
+    contenedor.innerHTML = "<h3>Comentarios:</h3>";
+
+    comentarios.forEach(function(c) {
+        contenedor.innerHTML += `
+            <div>
+                <p><strong>Nombre:</strong> ${c.nombre}</p>
+                <p><strong>Email:</strong> ${c.email}</p>
+                <p><strong>Mensaje:</strong> ${c.mensaje}</p>
+                <hr>
+            </div>
+        `;
+    });
+
+    if (comentarios.length === 0) {
+        contenedor.innerHTML += "<p>No hay comentarios</p>";
+    }
+}
+
+function borrarTodo() {
+    localStorage.removeItem("comentarios");
+    mostrarDatos();
+}
+</script>
+
+</body>
+</html>
