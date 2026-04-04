@@ -11,12 +11,12 @@
 <header>
 
     <div>
-        <img src="allka logo.jpg">
+
         <h1>Allka</h1>
     </div>
 
-    <nav>
-        <ul>
+   <nav>
+        <ul id="lista-header">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="productos.html">Productos</a></li>
             <li><a href="categorias.html">Categorías</a></li>
@@ -24,7 +24,7 @@
         </ul>
     </nav>
 
-    <div>
+    <div id="carrito">
         <a href="carrito.html">
             <img src="carrito.jpg" id="carrito">
         </a>
@@ -35,7 +35,7 @@
 <main>
 
     <section>
-        <p>Ultimas novedades</p>
+        <h1 class="ultnv">Ultimas novedades</h1>
         <div class="novedad">
         <img src="remera 1.jpg">
         <img src="pantalon 1.jpg">
@@ -45,10 +45,10 @@
 
     <section>
         <div class="novedad">
-        <h2>Destacados</h2>
+        <h1 >Destacados</h1>
 
         <article>
-            <h3>Producto 1</h3>
+            <h2>Producto 1</h2>
             <img src="remera 3.jpg">
                 <div>
                     <p>Remera - $20.000</p>
@@ -57,7 +57,7 @@
         </article>
 
         <article>
-            <h3>Producto 2</h3>
+            <h2>Producto 2</h2>
             <img src="pantalon 2.jpg">
                 <div>
                     <p>pantalon - $30.000</p>
@@ -66,7 +66,7 @@
         </article>
 
         <article>
-            <h3>Producto 3</h3>
+            <h2>Producto 3</h2>
             <img src="remera 4.jpg">
                 <div>
                     <p>Remera - $15.000</p>
@@ -93,14 +93,13 @@ function agregar(nombre, precio, imagen) {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 </script>
+
 <footer>
+    <p id="copyright">© 2026 Mi Tienda</p>
 
-
-    <p>© 2026 Mi Tienda</p>
-
-    <nav>
-        <ul>
-            <li><a href="https://www.instagram.com/allkaexclusiveclub/" target="_blank">Instagram</a></li>
+    <nav id="menu-footer">
+        <ul id="lista-enlaces">
+            <li><a href="https://www.instagram.com/allkaexclusiveclub/" target="_blank" id="link-instagram">Instagram</a></li>
             <li><a href="Términos.html">Términos y condiciones</a></li>
             <li><a href="Privacidad.html">Política de privacidad</a></li>
         </ul>
