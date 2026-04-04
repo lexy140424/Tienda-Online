@@ -8,7 +8,15 @@
 <body>
 
 <header>
+<main>
     <h1>Mi Tienda</h1>
+
+    <div>
+        <img src="allka logo.jpg">
+        <h1>Allka</h1>
+    </div>
+
+  >>>>>>> </main>
 
     <nav>
         <ul id="lista-header">
@@ -39,20 +47,52 @@
     <!-- Esta sección permite que el usuario envíe mensajes -->
     <section>
 
-        <!-- Ej de formulario:
-        <form>
-            <label>Nombre:</label>
-            <input type="text">
+    
+        <form id="formulario">
+    <label>Nombre:</label>
+    <input type="text" id="nombre">
 
-            <label>Email:</label>
-            <input type="email">
+    <label>Email:</label>
+    <input type="email" id="email">
 
-            <label>Mensaje:</label>
-            <textarea></textarea>
+    <label>Mensaje:</label>
+    <textarea id="mensaje"></textarea>
 
-            <button>Enviar</button>
-        </form>
-        -->
+    <button type="submit">Enviar</button>
+</form>
+
+
+<script>
+document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value;
+    let email = document.getElementById("email").value;
+    let mensaje = document.getElementById("mensaje").value;
+
+    let datos = {
+        nombre: nombre,
+        email: email,
+        mensaje: mensaje
+    };
+
+    
+    let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+
+
+    comentarios.push(datos);
+
+   
+    localStorage.setItem("comentarios", JSON.stringify(comentarios));
+
+    alert("Comentario guardado correctamente");
+
+    document.getElementById("formulario").reset();
+});
+</script>
+
+
+        <li><a href="comentarios.html">Ver Comentarios</a></li>
 
     </section>
 
