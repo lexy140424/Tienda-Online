@@ -33,7 +33,6 @@ h1{
     color: #ffffff;            /* Blanco puro */
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Sombra suave para que resalte sobre el fondo */   
 }
-
 h2{
     font-size: 25px;           /* Un tamaño imponente */
     margin-bottom: 10px;       /* Espacio con el menú de abajo */
