@@ -1,16 +1,212 @@
-.Términosyprivacidad {
-  border: 1px solid black;
-  padding: 10px;
-  width: 90%;
-  margin: auto;
+/* Configuración General */
+body {
+    background-color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-#carrito {
-  width: 100px;
-  height: 100px;
+/* Header con fondo de imagen */
+header {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('allka logo.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 0 40px 0;
 }
 
-.novedad img {
-   width: 100px;
-  height: 100px;
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    font-size: 80px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    margin: 0;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+}
+
+.subtitulo-marca {
+    font-size: 14px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* Menú de navegación */
+#lista-header {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#lista-header a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+#lista-header a:hover {
+    color: #ff0000; 
+    border-bottom: 2px solid white;
+}
+
+/* Carrito en la esquina */
+#boton-carrito {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+#img-carrito {
+    width: 50px;
+    height: 50px;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.contenedor-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #333;
+    margin-top: 50px;
+}
+
+.tarjeta-producto {
+    background-color: #ebedee; 
+    width: 300px;
+    transition: 0.3s;
+    border: none;
+}
+
+.tarjeta-producto:hover {
+    outline: 2px solid black;
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-producto {
+    background-color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.info-producto h2 {
+    font-size: 18px;
+    margin: 0;
+    color: black;
+}
+
+.info-producto p {
+    font-weight: bold;
+    color: #555;
+}
+
+.btn-agregar {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn-agregar:hover {
+    background-color: #444;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+#lista-enlaces {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#lista-enlaces a {
+    color: #888;
+    text-decoration: none;
+}
+
+#lista-enlaces a:hover {
+    color: rgb(189, 0, 0);
+}
+
+main {
+    display: flex;          
+    flex-wrap: wrap;        
+    justify-content: center; 
+    gap: 20px;             
+    padding: 30px 20px;
+}
+
+
+article {
+    background-color: white;
+    width: 300px;          
+    padding: 20px;
+    border-radius: 15px;    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article img {
+    width: 100%;           
+    max-width: 250px;       
+    height: 250px;          
+    object-fit: cover;      
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article h1 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
