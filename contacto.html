@@ -1,109 +1,80 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Contacto - Mi Tienda</title>
-     <link rel="stylesheet" href="estilos.css">
+<! DOCTYPE html >
+< html lang = "es" >
+<cabeza>
+< meta charset = "UTF-8" >
+< título > Contacto - Mi Tienda </ título >
+< link rel = "stylesheet" href = "estilos.css" >
 </head>
-<body>
-
-<header>
-<main>
-    <h1>Mi Tienda</h1>
-
-    <div>
-        <img src="allka logo.jpg">
-        <h1>Allka</h1>
-    </div>
-
-  >>>>>>> </main>
-
-    <nav>
-        <ul id="lista-header">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="categorias.html">Categorías</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-
-    <h1>Contacto</h1>
-
-    <!-- INFORMACIÓN DE CONTACTO -->
-    <section>
-        <p>Podés escribirnos a nuestro email o redes sociales.</p>
-
-        <!-- ej:
-        <p>Email: mitienda@gmail.com</p>
-        <p>Instagram: @mitienda</p>
-        -->
-    </section>
-
-
-    <!-- FORMULARIO DE CONTACTO FUTURO -->
-    <!-- Esta sección permite que el usuario envíe mensajes -->
-    <section>
-
-    
-        <form id="formulario">
-    <label>Nombre:</label>
-    <input type="text" id="nombre">
-
-    <label>Email:</label>
-    <input type="email" id="email">
-
-    <label>Mensaje:</label>
-    <textarea id="mensaje"></textarea>
-
-    <button type="submit">Enviar</button>
+< cuerpo >
+< encabezado >
+< principal >
+< h1 > Mi Tienda </ h1 >
+< div >
+< img src = "logotipo de allka.jpg" >
+< h1 > Allka </ h1 >
+</div>
+>>>>>>> </main>
+<nav>
+< ul id = "lista-header" >
+< li >< a href = "index.html" > Inicio </ a >> li >
+< li >< a href = "productos.html" > Productos </ a >> li >
+< li >< a href = "categorias.html" > Categorías </ a >> li >
+< li >< a href = "contacto.html" > Contacto </ a >> li >
+</ul>
+</nav>
+</encabezado>
+< principal >
+< h1 > Contacto </ h1 >
+<!-- INFORMACIÓN DE CONTACTO -->
+< sección >
+< p > Podés escribirnos a nuestro correo electrónico o redes sociales.
+</p>
+<!-- ej:
+<p>Correo electrónico: allkaexclusiveclub@gmail.com</p>
+<p>Instagram: @allkaexclusiveclub</p>
+<p>Tiktok: @allkaexclusiveclub</p>
+</ sección >
+allkaexclusiveclub@gmail.com
+< sección >
+< form id = "formulario" >
+<label> Nombre : </label>
+< input type = "text" id = "nombre" >
+<label> Correo electrónico : </label>
+< input type = "email" id = "email" >
+<label> Mensaje : </label>
+< textarea id = "mensaje" >> textarea >
+< button type = " submit" > Enviar </button>
 </form>
-
-
 <script>
-document.getElementById("formulario").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    let nombre = document.getElementById("nombre").value;
-    let email = document.getElementById("email").value;
-    let mensaje = document.getElementById("mensaje").value;
-
-    let datos = {
-        nombre: nombre,
-        email: email,
-        mensaje: mensaje
-    };
-
-    
-    let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
-
-
-    comentarios.push(datos);
-
-   
-    localStorage.setItem("comentarios", JSON.stringify(comentarios));
-
-    alert("Comentario guardado correctamente");
-
-    document.getElementById("formulario").reset();
+document.getElementById ( "formulario" ). addEventListener ( " submit"
+, function ( e ) {
+ e.preventDefault ( ) ;
+ dejar nombre = documento . getElementById ( "nombre" ). valor ;
+ dejar correo electrónico = documento.getElementById ( " correo
+electrónico" ) . value ;
+ dejar mensaje = documento . getElementById ( "mensaje" ). valor ;
+ dejar datos = {
+ nombre: nombre ,
+ correo electrónico: correo electrónico ,
+ mensaje: mensaje
+ };
+ 
+ dejar comentarios = JSON . parse ( localStorage . getItem (
+"comentarios" )) || [];
+ comentarios . push ( datos );
+ 
+ almacenamiento local . setItem ( "comentarios" , JSON . stringify (
+comentarios ));
+ alerta ( "Comentario guardado correctamente" );
+ documento.getElementById ( "formulario" ). reset ( ) ;
 });
 </script>
-
-
-        <li><a href="comentarios.html">Ver Comentarios</a></li>
-
-    </section>
-
+< li >< a href = "comentarios.html" > Ver Comentarios </ a >> li >
+</ sección >
 </main>
-
-<footer>
-
-    <!-- agregar redes o info legal (como tdas las tiendas de ropa) -->
-    <p>© 2026 Mi Tienda</p>
-
-</footer>
-
+< pie de página >
+<!-- agregar redes o info legal (como tdas las tiendas de ropa) -->
+< p > © 2026 Mi Tienda </ p >
+</ pie de página >
 </body>
 </html>
