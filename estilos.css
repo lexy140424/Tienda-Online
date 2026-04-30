@@ -189,7 +189,7 @@ main {
   width: 100%;
 }
 
-contacto-info {
+.contacto-info {
   max-width: 400px;
 }
 
@@ -371,6 +371,28 @@ article h1 {
   transform: scale(1.02);
   transition: 0.3s;
 }
+
+
+#notificacion {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: 0.4s;
+  z-index: 9999;
+}
+
+#notificacion.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 @media (max-width: 768px) {
   .contacto-contenedor {
