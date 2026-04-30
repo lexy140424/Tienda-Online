@@ -49,7 +49,7 @@
                 <div class="info-producto">
                     <h2>Producto 1</h2>
                     <p>Remera - $20.000</p>
-                    <button class="btn-agregar" onclick="agregar('Remera', 20000, 'remera 3.jpg')">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Remera', 20000, 'remera 2.jpg')">Agregar al carrito</button>
                 </div>
             </article>
 
@@ -58,7 +58,7 @@
                 <div class="info-producto">
                     <h2>Producto 2</h2>
                     <p>Pantalón - $30.000</p>
-                    <button class="btn-agregar" onclick="agregar('Pantalón', 30000, 'pantalon 2.jpg')">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Pantalón', 30000, 'pantalon 1.jpg')">Agregar al carrito</button>
                 </div>
             </article>
 
@@ -67,7 +67,7 @@
                 <div class="info-producto">
                     <h2>Producto 3</h2>
                     <p>Remera - $15.000</p>
-                    <button class="btn-agregar" onclick="agregar('Remera', 15000, 'remera 4.jpg')">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Remera', 15000, 'remera 1.jpg')">Agregar al carrito</button>
                 </div>
             </article>
         </div>
@@ -87,11 +87,15 @@
 
 <script>
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
     function agregar(nombre, precio, imagen) {
-        let producto = { nombre, precio, imagen };
+        let producto = { nombre: nombre, precio: precio, imagen: imagen };
+        
         carrito.push(producto);
+        
         localStorage.setItem("carrito", JSON.stringify(carrito));
-        alert("¡Producto agregado!");
+        
+        alert("¡Producto agregado al carrito!");
     }
 </script>
 
