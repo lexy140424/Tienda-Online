@@ -210,3 +210,19 @@ article h1 {
     text-transform: uppercase;
     margin-bottom: 15px;
 }
+
+#ver-comentarios {
+  position: fixed;
+  bottom: 20px;   /* distancia desde abajo */
+  right: 20px;    /* esquina derecha */
+  background-color: #000;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#ver-comentarios:hover {
+  background-color: #444;
+}
