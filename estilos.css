@@ -235,8 +235,8 @@ article h1 {
 
 section {
   display: flex;
-  justify-content: flex-start; /* lo manda a la izquierda */
-  padding: 40px;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
 
