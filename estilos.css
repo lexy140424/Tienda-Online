@@ -226,3 +226,10 @@ article h1 {
 #ver-comentarios:hover {
   background-color: #444;
 }
+.img-novedad {
+  width: 300px;  /* Ancho fijo */
+  height: auto;   /* Mantiene la proporción original */
+}
+
+
+
