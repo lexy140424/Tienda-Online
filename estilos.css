@@ -232,3 +232,50 @@ article h1 {
 
 
 
+
+section {
+  display: flex;
+  justify-content: flex-start; /* lo manda a la izquierda */
+  padding: 40px;
+}
+
+
+#formulario {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#formulario label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Inputs y textarea */
+#formulario input,
+#formulario textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#formulario button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#formulario button:hover {
+  background-color: #444;
+}
