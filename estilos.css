@@ -1,4 +1,3 @@
-/* Configuración General */
 body {
     background-color: #f4f4f4;
     font-family: 'Montserrat', sans-serif;
@@ -227,8 +226,8 @@ article h1 {
   background-color: #444;
 }
 .img-novedad {
-  width: 300px;  /* Ancho fijo */
-  height: auto;   /* Mantiene la proporción original */
+  width: 300px;  
+  height: auto;   
 }
 
 
