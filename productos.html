@@ -31,28 +31,26 @@
                 <div class="info-producto">
                     <h2>Remera Y2K</h2>
                     <p>Drop 1</p>
-                    <button class="btn-agregar">Agregar al carrito</button>
+                     <button class="btn-agregar" onclick="agregar('Remera', 15000, 'remera 1.jpg')">Agregar al carrito</button>
                 </div>
             </article>
 
             <article class="tarjeta-producto">
-                 <!-- IMÁGENES ROPA -->
                 <img src="pantalon 1.jpg" alt="Pantalon y2k">
                 <div class="info-producto">
                     <h2>pantalon Y2K</h2>
                     <p>Drop 1</p>
-                    <button class="btn-agregar" onclick="agregar('producto 2', 20000, 'remera 3.jpg')">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Pantalon', 30000, 'Pantalon 1.jpg')">Agregar al carrito</button>
 
                 </div>
             </article>
 
             <article class="tarjeta-producto">
-                 <!-- IMÁGENES ROPA -->
                 <img src="Remera 2.jpg" alt="Remera Y2K">
                 <div class="info-producto">
                     <h2>Remera Y2K</h2>
                     <p>Drop 1</p>
-                    <button class="btn-agregar">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Remera', 20000, 'Remera 2.jpg')">Agregar al carrito</button>
                 </div>
             </article>
         </div>
@@ -60,37 +58,38 @@
 </main>
 
 <br><br>
-
+<div id="boton-carrito">
+        <a href="carrito.html">
+            <img src="carrito.jpg" id="img-carrito" alt="Carrito">
+        </a>
+    </div>
 <main>
 
         <div class="contenedor-flex">
             <article class="tarjeta-producto">
-                 <!-- IMÁGENES ROPA -->
-                <img src="campera 1.jpg" alt="campera">
+                <img src="campera 1.jpg" alt="Campera">
                 <div class="info-producto">
                     <h2>Campera Y2K</h2>
                     <p>Drop 1</p>
-                    <button class="btn-agregar">Agregar al carrito</button>
+                   <button class="btn-agregar" onclick="agregar('Campera', 50000, 'campera 1.jpg')">Agregar al carrito</button>
                 </div>
             </article>
 
             <article class="tarjeta-producto">
-                 <!-- IMÁGENES ROPA -->
-                <img src="accesorios2.jpg" alt="Producto 5">
+                <img src="accesorios2.jpg" alt="Accesorios">
                 <div class="info-producto">
                     <h2>Accesorio</h2>
                     <p>Drop 1</p>
-                    <button class="btn-agregar">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Accesorio', 10000, 'accesorios2.jpg')">Agregar al carrito</button>
                 </div>
             </article>
 
             <article class="tarjeta-producto">
-                 <!-- IMÁGENES ROPA -->
-                <img src="accesorios 3.jpg" alt="Producto 6">
+                <img src="accesorios 3.jpg" alt="Accesorios">
                 <div class="info-producto">
                     <h2>Accesorio</h2>
                     <p>Drop 1</p>
-                    <button class="btn-agregar">Agregar al carrito</button>
+                     <button class="btn-agregar" onclick="agregar('Accesorio', 10000, 'accesorios 3.jpg')">Agregar al carrito</button>
                 </div>
             </article>
         </div>
@@ -99,15 +98,20 @@
 
 
 <footer>
-
-    <!-- ICONOS O IMÁGENES DE REDES SOCIALES -->
-    <!-- Ejemplo:
-    <img src="img/instagram.png" alt="Instagram">
-    -->
-
     <p>© 2026 Mi Tienda</p>
-
 </footer>
+
+<script>
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    function agregar(nombre, precio, imagen) {
+        let producto = { nombre: nombre, precio: precio, imagen: imagen };
+        carrito.push(producto);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        
+        alert("¡Producto agregado al carrito!");
+    }
+</script>
 
 </body>
 </html>
