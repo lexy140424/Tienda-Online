@@ -8,36 +8,49 @@
 
 <body>
 
-<h1>Tu carrito 🛒</h1>
+<main>
 
-<p>Total: $<span id="total">0</span></p>
+  <h1 class="titulo-seccion">Tu carrito 🛒</h1>
 
-<button onclick="vaciar()">Vaciar carrito</button>
+  <p class="total">Total: $<span id="total">0</span></p>
 
-<br><br>
+  <div id="contenedor-carrito"></div>
 
-<a href="index.html" id="btn-volver">Volver a la tienda</a>
+  <div class="acciones-carrito">
+    <button onclick="vaciar()">Vaciar carrito</button>
+    <a href="index.html" class="btn-volver">Volver a la tienda</a>
+  </div>
+
+</main>
+
+<!-- NOTIFICACIÓN -->
+<div id="notificacion"></div>
 
 <script>
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-let contenedor = document.createElement("div");
-
+let contenedor = document.getElementById("contenedor-carrito");
 let total = 0;
 
 function mostrarCarrito() {
   contenedor.innerHTML = "";
   total = 0;
 
+  if (carrito.length === 0) {
+    contenedor.innerHTML = "<p style='text-align:center;'>El carrito está vacío</p>";
+    document.getElementById("total").textContent = 0;
+    return;
+  }
+
   carrito.forEach((producto, index) => {
     let item = document.createElement("div");
 
     item.innerHTML = `
       <img src="${producto.imagen}" width="100">
-      <p>${producto.nombre}</p>
-      <p>$${producto.precio}</p>
+      <div>
+        <p>${producto.nombre}</p>
+        <p>$${producto.precio}</p>
+      </div>
       <button onclick="eliminar(${index})">Eliminar</button>
-      <hr>
     `;
 
     contenedor.appendChild(item);
@@ -49,23 +62,34 @@ function mostrarCarrito() {
 }
 
 function eliminar(index) {
-  carrito.splice(index, 1); // elimina 1 producto
-
+  carrito.splice(index, 1);
   localStorage.setItem("carrito", JSON.stringify(carrito));
 
-  mostrarCarrito(); // vuelve a mostrar actualizado
+  mostrarCarrito();
+  mostrarNotificacion("Producto eliminado");
 }
 
 function vaciar() {
   localStorage.removeItem("carrito");
   carrito = [];
+
   mostrarCarrito();
+  mostrarNotificacion("Carrito vaciado");
 }
 
-document.body.appendChild(contenedor);
+function mostrarNotificacion(mensaje) {
+  let notif = document.getElementById("notificacion");
+
+  notif.textContent = "✔ " + mensaje;
+  notif.classList.add("mostrar");
+
+  setTimeout(() => {
+    notif.classList.remove("mostrar");
+  }, 2500);
+}
 
 mostrarCarrito();
 </script>
-<div id="notificacion"></div>
+
 </body>
 </html>

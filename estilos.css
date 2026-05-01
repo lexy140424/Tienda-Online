@@ -393,6 +393,35 @@ article h1 {
   transform: translateY(0);
 }
 
+/* BOTONES DEL CARRITO */
+.acciones-carrito button,
+.acciones-carrito a {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+/* Hover */
+.acciones-carrito button:hover,
+.acciones-carrito a:hover {
+  background-color: #222;
+  transform: scale(1.05);
+}
+
+/* Click */
+.acciones-carrito button:active,
+.acciones-carrito a:active {
+  transform: scale(0.95);
+}
 
 @media (max-width: 768px) {
   .contacto-contenedor {

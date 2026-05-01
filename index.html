@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
 
 <header>
@@ -32,6 +33,7 @@
 </header>
 
 <main>
+
     <section>
         <h2 class="titulo-seccion">Ultimas novedades</h2>
         <div class="contenedor-flex">
@@ -43,13 +45,17 @@
 
     <section>
         <h2 class="titulo-seccion">Destacados</h2>
+
         <div class="contenedor-flex">
+
             <article class="tarjeta-producto">
                 <img src="remera 2.jpg" alt="Producto 1">
                 <div class="info-producto">
                     <h2>Producto 1</h2>
                     <p>Remera - $20.000</p>
-                    <button class="btn-agregar" onclick="agregar('Remera', 20000, 'remera 2.jpg')">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Remera', 20000, 'remera 2.jpg')">
+                        Agregar al carrito
+                    </button>
                 </div>
             </article>
 
@@ -58,7 +64,9 @@
                 <div class="info-producto">
                     <h2>Producto 2</h2>
                     <p>Pantalón - $30.000</p>
-                    <button class="btn-agregar" onclick="agregar('Pantalón', 30000, 'pantalon 1.jpg')">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Pantalon', 30000, 'pantalon 1.jpg')">
+                        Agregar al carrito
+                    </button>
                 </div>
             </article>
 
@@ -67,11 +75,15 @@
                 <div class="info-producto">
                     <h2>Producto 3</h2>
                     <p>Remera - $15.000</p>
-                    <button class="btn-agregar" onclick="agregar('Remera', 15000, 'remera 1.jpg')">Agregar al carrito</button>
+                    <button class="btn-agregar" onclick="agregar('Remera', 15000, 'remera 1.jpg')">
+                        Agregar al carrito
+                    </button>
                 </div>
             </article>
+
         </div>
     </section>
+
 </main>
 
 <footer>
@@ -85,21 +97,41 @@
     </nav>
 </footer>
 
+<!-- NOTIFICACIÓN -->
+<div id="notificacion"></div>
+
 <script>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function agregar(nombre, precio, imagen) {
+
+    // 🔥 SIEMPRE leer lo último guardado
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    function agregar(nombre, precio, imagen) {
-        let producto = { nombre: nombre, precio: precio, imagen: imagen };
-        
-        carrito.push(producto);
-        
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        
-        alert("¡Producto agregado al carrito!");
-    }
+    let producto = {
+        nombre: nombre,
+        precio: Number(precio), // 👈 MUY IMPORTANTE
+        imagen: imagen
+    };
+
+    carrito.push(producto);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    mostrarNotificacion("Producto agregado al carrito");
+}
+
+function mostrarNotificacion(mensaje) {
+    let notif = document.getElementById("notificacion");
+
+    notif.textContent = "✔ " + mensaje;
+    notif.classList.add("mostrar");
+
+    setTimeout(() => {
+        notif.classList.remove("mostrar");
+    }, 2500);
+}
 </script>
-<div id="notificacion"></div>
+
 </body>
-
 </html>
-

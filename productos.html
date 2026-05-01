@@ -105,12 +105,22 @@
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     function agregar(nombre, precio, imagen) {
-        let producto = { nombre: nombre, precio: precio, imagen: imagen };
-        carrito.push(producto);
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        
-        alert("¡Producto agregado al carrito!");
-    }
+
+    // 🔥 SIEMPRE leer lo último guardado
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    let producto = {
+        nombre: nombre,
+        precio: Number(precio), // 👈 MUY IMPORTANTE
+        imagen: imagen
+    };
+
+    carrito.push(producto);
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    mostrarNotificacion("Producto agregado al carrito");
+}
 </script>
 <div id="notificacion"></div>
 </body>
