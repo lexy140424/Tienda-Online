@@ -26,23 +26,76 @@
 </header>
 
 <main>
+    
 <br>
     <!-- CATEGORÍA: ROPA -->
-    <article>
-        <h1 >Ropa</h1>
-        <img src="ropa.jpg">
-        <p id="lista-enlaces"><a href="productos.html">Ver productos</a></p>
 
-    </article>
+    <h1 class="titulo-categoria">ROPA</h1>
+<div class="contenedor-flex">
+    
+    <div class="tarjeta-producto">
+        <img src="campera 1.jpg" alt="Campera">
+            <div class="info-producto">
+                <h2>Campera Y2K</h2>
+                <p>Drop 1</p>
+                <button class="btn-agregar" onclick="agregar('Campera', 50000, 'campera 1.jpg')">$50.000</button>
+            </div>
+    </div>
 
-    <!-- CATEGORÍA: ACCESORIOS -->
-    <article>
-         <h1 >Accesorios</h1>
-        <img src="accesorios.jpg">
-        <p id="lista-enlaces"><a href="productos.html">Ver productos</a></p>
+    <div class="tarjeta-producto">
+        <img src="pantalon 1.jpg" alt="Pantalon Y2K">
+            <div class="info-producto">
+                <h2>Pantalón Y2K</h2>
+                <p>Drop 1</p>
+                <button class="btn-agregar" onclick="agregar('Pantalon', 30000, 'Pantalon 1.jpg')">$30.000</button>
+            </div>
+    </div>
 
-    </article>
+    <div class="tarjeta-producto">
+        <img src="Remera 2.jpg" alt="Remera Y2K">
+            <div class="info-producto">
+                <h2>Remera Y2K</h2>
+                <p>Drop 1</p>
+                <button class="btn-agregar" onclick="agregar('Remera', 20000, 'remera 2.jpg')">$20.000</button>
+            </div>
+    </div>
 
+    <div class="tarjeta-producto">
+    <img src="remera 1.jpg" alt="Remera Y2K">
+            <div class="info-producto">
+                <h2>Remera Y2K</h2>
+                <p>Drop 1</p>
+                <button class="btn-agregar" onclick="agregar('Remera', 15000, 'remera 1.jpg')">$15.000</button>
+            </div>
+    </div>
+
+</div>
+
+    
+
+<!-- CATEGORÍA: ACCESORIOS -->
+ <h1 class="titulo-categoria">Accesorios</h1>
+<div class="contenedor-flex">
+    <article class="tarjeta-producto">
+                <img src="accesorios 3.jpg" alt="Accesorios">
+                <div class="info-producto">
+                    <h2>Cinturón</h2>
+                    <p>Drop 1</p>
+                     <button class="btn-agregar" onclick="agregar('Accesorio', 10000, 'accesorios 3.jpg')">$10.000</button>
+                </div>
+            </article>
+    <article class="tarjeta-producto">
+                <img src="accesorios2.jpg" alt="Accesorios">
+                <div class="info-producto">
+                    <h2>Set Collares 1</h2>
+                    <p>Drop 1</p>
+                    <button class="btn-agregar" onclick="agregar('Accesorio', 10000, 'accesorios2.jpg')">$10.000</button>
+                </div>
+            </article>
+</div>
+
+
+    <!-- CATEGORÍA: Gorros -->
         <article>
          <h1 >Headwears</h1>
         <img src="gorras.jpg">
@@ -51,15 +104,17 @@
     </article>
 
 
-    <!-- si se necesita podemos agregar más categorías-->
-
 </main>
 
 <footer>
-
-    <!-- agregar redes o info legal (como tdas las tiendas de ropa) -->
-    <p>© 2026 Mi Tienda</p>
-
+    <p id="copyright">© 2026 Allka Exclusive Club</p>
+    <nav id="menu-footer">
+        <ul id="lista-enlaces">
+            <li><a href="https://www.instagram.com/allkaexclusiveclub/" target="_blank">Instagram</a></li>
+            <li><a href="Términos.html">Términos y condiciones</a></li>
+            <li><a href="Privacidad.html">Política de privacidad</a></li>
+        </ul>
+    </nav>
 </footer>
 <div id="notificacion"></div>
 </body>
