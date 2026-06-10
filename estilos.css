@@ -85,8 +85,7 @@ header h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    padding: 20px;
+    gap: 20px;
 }
 
 .titulo-seccion {
@@ -98,26 +97,23 @@ header h1 {
 }
 
 .tarjeta-producto {
-    background-color: #ebedee; 
-    width: 300px;
-    transition: 0.3s;
-    border: none;
+    width: 350px;
+    background: white;
+    border-radius: 15px;
 }
 
-.tarjeta-producto:hover {
-    outline: 2px solid black;
-}
 
 .tarjeta-producto img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 250px;
+    object-fit: contain;
 }
 
 .info-producto {
     background-color: white;
     padding: 20px;
     text-align: left;
+    border-radius: 20px;
 }
 
 .info-producto h2 {
@@ -140,6 +136,7 @@ header h1 {
     text-transform: uppercase;
     font-weight: bold;
     width: 100%;
+    border-radius:5px;
 }
 
 .btn-agregar:hover {
@@ -180,6 +177,17 @@ main {
   padding: 40px 20px;
 }
 
+.categorias-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.categoria-ropa {
+    width: 100%;
+    max-width: 1200px;
+}
 .contacto-contenedor {
   display: flex;
   justify-content: center;
