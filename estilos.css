@@ -7,7 +7,7 @@ body {
 
 /* Header con fondo de imagen */
 header {
-    position: relative;
+    position: flex;;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('allka logo.jpg'); 
     background-size: cover;
     background-position: center;
@@ -193,7 +193,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   gap: 50px;
-  max-width: 900px;
+  max-width: 800px;
   width: 100%;
 }
 
@@ -204,6 +204,7 @@ main {
 .contacto-info p {
   margin-bottom: 10px;
   font-size: 16px;
+  
 }
 
 article {
