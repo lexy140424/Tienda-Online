@@ -37,9 +37,9 @@
     <section>
         <h2 class="titulo-seccion">Ultimas novedades</h2>
         <div class="contenedor-flex">
-            <img src="remera 1.jpg" class="img-novedad">
-            <img src="pantalon 1.jpg" class="img-novedad">
-            <img src="remera 2.jpg" class="img-novedad">
+            <img src="remera 3.jpeg" class="img-novedad">
+            <img src="pantalon 2.jpeg" class="img-novedad">
+            <img src="remera 4.jpeg" class="img-novedad">
         </div>
     </section>
 
@@ -99,12 +99,12 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function agregar(nombre, precio, imagen) {
 
-    // 🔥 SIEMPRE leer lo último guardado
+    
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     let producto = {
         nombre: nombre,
-        precio: Number(precio), // 👈 MUY IMPORTANTE
+        precio: Number(precio), 
         imagen: imagen
     };
 
