@@ -439,3 +439,7 @@ article h1 {
     align-items: center;
   }
 }
+
+#Términosyprivacidad p{
+  color: blue;
+}
