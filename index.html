@@ -53,6 +53,7 @@
                 <div class="info-producto">
                     <h2>Remera Y2K</h2>
                     <p>Drop 1</p>
+                    <p>Remera Y2K negra con estampado de àngel y alas, diseño urbano.</p>
                     <button class="btn-agregar" onclick="agregar('Remera', 20000, 'remera 2.jpg')">$20.000</button>
                 </div>
             </article>
@@ -62,6 +63,7 @@
                 <div class="info-producto">
                     <h2>Producto 2</h2>
                     <p>Drop 1</p>
+                    <p>Pantalón jean Y2K baggy, color negro bolsillos cargo y estampado lateral.</p>
                     <button class="btn-agregar" onclick="agregar('Pantalon', 30000, 'pantalon 1.jpg')">$30.000</button>
                 </div>
             </article>
@@ -71,6 +73,7 @@
                 <div class="info-producto">
                     <h2>Producto 3</h2>
                     <p>Drop 1</p>
+                    <p>Remera oversize negra Y2K de algodón, con estampado de alas y cruz.</p>
                     <button class="btn-agregar" onclick="agregar('Remera', 15000, 'remera 1.jpg')">$15.000</button>
                 </div>
             </article>
@@ -99,22 +102,38 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function agregar(nombre, precio, imagen) {
 
-    
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    let producto = {
-        nombre: nombre,
-        precio: Number(precio), 
-        imagen: imagen
-    };
 
-    carrito.push(producto);
+    let productoExistente = carrito.find(producto => 
+        producto.nombre == nombre && producto.imagen == imagen
+    );
+
+
+    if(productoExistente){
+
+        productoExistente.cantidad++;
+
+    }else{
+
+        let producto = {
+            nombre: nombre,
+            precio: Number(precio),
+            imagen: imagen,
+            cantidad: 1
+        };
+
+
+        carrito.push(producto);
+
+    }
+
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
+
     mostrarNotificacion("Producto agregado al carrito");
 }
-
 function mostrarNotificacion(mensaje) {
     let notif = document.getElementById("notificacion");
 
