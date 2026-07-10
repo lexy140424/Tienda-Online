@@ -45,17 +45,51 @@ function mostrarCarrito() {
     let item = document.createElement("div");
 
     item.innerHTML = `
-      <img src="${producto.imagen}" width="100">
-      <div>
-        <p>${producto.nombre}</p>
-        <p>$${producto.precio}</p>
-      </div>
-      <button onclick="eliminar(${index})">Eliminar</button>
-    `;
+<img src="${producto.imagen}" width="100">
+
+<div>
+
+<p>${producto.nombre}</p>
+
+<p>Precio: $${producto.precio}</p>
+
+
+<p>
+
+Cantidad:
+
+<button onclick="restarCantidad(${index})">
+-
+</button>
+
+
+${producto.cantidad}
+
+
+<button onclick="sumarCantidad(${index})">
++
+</button>
+
+</p>
+
+
+<p>
+Subtotal:
+$${producto.precio * producto.cantidad}
+</p>
+
+
+</div>
+
+
+<button onclick="eliminar(${index})">
+Eliminar
+</button>
+`;
 
     contenedor.appendChild(item);
 
-    total += producto.precio;
+    total += producto.precio *producto.cantidad;
   });
 
   document.getElementById("total").textContent = total;
@@ -68,7 +102,43 @@ function eliminar(index) {
   mostrarCarrito();
   mostrarNotificacion("Producto eliminado");
 }
+function sumarCantidad(index){
 
+    carrito[index].cantidad++;
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
+
+    mostrarCarrito();
+
+}
+
+
+
+function restarCantidad(index){
+
+    if(carrito[index].cantidad > 1){
+
+        carrito[index].cantidad--;
+
+    }else{
+
+        carrito.splice(index,1);
+
+    }
+
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
+
+
+    mostrarCarrito();
+
+}
 function vaciar() {
   localStorage.removeItem("carrito");
   carrito = [];
